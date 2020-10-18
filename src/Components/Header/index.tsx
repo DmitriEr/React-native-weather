@@ -9,11 +9,6 @@ interface Props {
 }
 
 export const Header: React.FunctionComponent<Props> = ({ cityData, setDays, days }) => {
-
-  const handlePickerView = (value: any) => {
-    console.log(value)
-  }
-
   return (
     <>
       <View>
@@ -23,7 +18,7 @@ export const Header: React.FunctionComponent<Props> = ({ cityData, setDays, days
         <Picker
           selectedValue={days}
           style={styles.pickerDays}
-          onValueChange={(itemValue) => setDays(itemValue)}
+          onValueChange={(itemValue: string) => setDays(itemValue)}
         >
           {count.map((item: number) => <Picker.Item label={item.toString()} value={item} key={item}/>)}
         </Picker>
@@ -41,6 +36,8 @@ const styles = StyleSheet.create({
   },
   pickerDays: {
     height: 100,
-    flex: 1
+    flex: 1,
+    padding: 10,
+    margin: 10
   }
 });

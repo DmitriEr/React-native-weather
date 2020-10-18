@@ -61,7 +61,6 @@ export const Day: React.FunctionComponent<Props> = ({
           <Card.Header
             title={description.split('_').join(' ')}
             thumbStyle={{ width: 30, height: 30 }}
-            thumb={require(`../../Assets/${description}.svg`)}
             extra={number}
           />
           <Card.Body>
@@ -81,6 +80,7 @@ const styles = StyleSheet.create({
   },
   card: {
     backgroundColor: '#adf',
-    padding: 10
+    padding: 10,
+    margin: 10
   }
 });
